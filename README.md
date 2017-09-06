@@ -1,2 +1,0 @@
-# tuvanthietke
-# tuvanthietke
