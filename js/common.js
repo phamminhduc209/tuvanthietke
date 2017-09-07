@@ -1,12 +1,6 @@
 (function($){
   "use strict";
 
-  // Script initialization
-  $(window).load(function () {
-    /* Page loader */;
-    $('#loading').delay(600).fadeOut(1000);
-  });
-
   // Slide Carousel
   $(document).ready(function() {
     $(".owl-carousel").each(function(index, el) {
@@ -40,34 +34,26 @@
   });
 
   /*  [ Sticky Menu ] */
-  $('.fixed-header').sticky({ topSpacing: 0 });
+  // $('.fixed-header').sticky({ topSpacing: 0 });
 
-  // Accordion has icon arrow
-  $(document).on('click','.box-accordion > .accordion-header',function(event){
-    $(this).toggleClass('active');
-    $(this).toggleClass('opened');
-    $('.box-collapse').slideToggle(200);
-  });
-
-  /*  [ Main Menu ]
-  - - - - - - - - - - - - - - - - - - - - */
-  $(".navbar-toggle").on( 'click', function() {
-    $( this ).toggleClass('has-open');
-    $("header .menu").toggleClass("has-open");
-    $("body").toggleClass("menu-open");
-  });
-
-  $("[data-action='toggle-head']").on( 'click', function() {
-    $( this ).toggleClass('has-open');
-    $(".header-content").toggleClass("has-open");
-  });
-
-  /** Menu, Menu Mega Responsive **/
-  $(document).ready(function(){
-    $('.menu ul li.parent').append('<span class="carret-down"></span>');
-    $('.menu ul li.parent .carret-down').click(function(){
-      $(this).toggleClass('open').siblings('.submenu').slideToggle();
+  /*  Header */
+  if ($('.header-search').length) {
+    $('.search-icon').on('click', function(e) {
+      $(this).parent().find('search-form').fadeToggle();
+      if ($(this).find('i').hasClass('fa-search')) {
+        $(this).find('i').removeClass('fa-search').addClass('fa-close');
+      }else{
+        $(this).find('i').removeClass('fa-close').addClass('fa-search');
+      }
+      return false;
     });
-  });
+    $('body').on('click', function(e){
+      var $searchform = $('.search-form');
+      if (! ($searchform.has(e.target).length || $(e.target).is('.search-form input'))) {       
+        $('.search-icon').find('i').removeClass('fa-close').addClass('fa-search');
+        $searchform.fadeOut('fast','swing');
+      }
+    });
+  }
 
 })(jQuery); // End of use strict

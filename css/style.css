@@ -88,9 +88,13 @@ img {
   max-width: 100%;
   height: auto;
 }
-.h1, .h2, .h3, h1, h2, h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Montserrat';
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.24s ease-in-out;
+  -moz-transition: opacity 0.24s ease-in-out;
+  transition: opacity 0.24s ease-in-out;
 }
 .clearfix { clear: both; }
 .container, .container-fluid, .container-full {
@@ -520,4 +524,76 @@ form {
   padding: 0 10px;
   display: block;
   width: 30px;
+}
+
+/* Post Content
+  ========================================================================== */
+#content-wrapper.is-vc .post-content > .ht_section {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+.ht-introduce {
+  padding: 60px 0;
+}
+.st-heading, .st-iconbox, .st-promobox, .st-pricingbox, .st-pricinglist, .st-counter, .st-countdown, .st-blog .blog-container, .st-portfolio .portfolio-container, .st-team .team-container, .st-testimonial .testimonial-container, .st-testimonial-slider, .st-client, .st-client-slider, .st-service .service-container, #comments-title {
+  margin-bottom: 30px !important;
+}
+.st-heading .box-title {
+  margin: 0;
+  position: relative;
+}
+.st-heading .box-title::after {
+  display: block;
+  content: '';
+  position: relative;
+  width: 40px;
+  height: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fdbd10;
+}
+.st-heading .box-content {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.ht-about {
+  margin-bottom: 0px !important;
+  border-top-width: 1px !important;
+  padding-top: 40px !important;
+  padding-bottom: 10px !important;
+  border-top-color: #f2f2f2 !important;
+  border-top-style: solid !important;
+}
+
+.ht-iconbox {
+  padding-left: 70px;
+  position: relative;
+}
+.ht-iconbox .box-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2em;
+  color: #fff;
+  display: block;
+  line-height: 55px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  background-color: #2e3841;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background 0.3s linear 0s;
+  transition: background 0.3s linear 0s;
+}
+
+.ht-services {
+  margin-bottom: 0px !important;
+  padding-top: 60px !important;
+  padding-bottom: 30px !important;
+  background-color: #fafafa !important;
 }
